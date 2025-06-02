@@ -1,0 +1,12 @@
+# Frontend dependencies
+vite-react
+tailwindcss
+axios
+react-router-dom
+# Backend dependencies
+nodejs
+express
+cors
+dotenv
+mongoose
+axios
