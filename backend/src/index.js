@@ -4,9 +4,7 @@ import axios from 'axios';
 import weatherRoutes from './routes/weather.routes.js';
 import dotenv from 'dotenv';
 import { connectDB } from './db.js';
-import path from "path"
 
-const __dirname=path.resolve();
 dotenv.config();
 const app=express()
 app.use(cors({
@@ -24,14 +22,6 @@ app.use('/api',weatherRoutes)
 //   );
 
 //   console.log(weatherRes.data)
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static(path.join(__dirname,"../frontend/dist")));
-
-    app.get("*",(req,res)=>{
-        res.sendFile(path.join(__dirname,"../frontend","dist","index.html"))
-    })
-}
-
 
 app.listen(process.env.PORT,()=>{
     console.log("Server is running on port",process.env.PORT);
